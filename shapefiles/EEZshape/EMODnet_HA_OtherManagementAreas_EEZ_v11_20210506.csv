@@ -1,0 +1,81 @@
+OBJECTID;Territory;Country;Area_km2;SiteName;LegalFound;NUTScode;mblsds_MBL;MBLSZOTPID;nationalLe;Shape_Length;Shape_Area
+1;Ascension;United Kingdom;446005;Exclusive Economic Zone (200 nm) EEZ;;UK;In www.marineregions.org;2; ;21,87272681;36,59162509
+2;Falkland / Malvinas Islands;United Kingdom, Argentina;550566;Exclusive Economic Zone (200 nm) EEZ - Overlapping claim;;UK, AR;In www.marineregions.org;2; ;111,3271107;71,51006091
+3;French Polynesia;France;4766689;Exclusive Economic Zone (200 nm) EEZ;;FR;In www.marineregions.org;2; ;235,8323924;410,5191828
+4;Pitcairn;United Kingdom;842291;Exclusive Economic Zone (200 nm) EEZ;;UK;In www.marineregions.org;2; ;34,85341322;75,1348519
+5;Saint Helena;United Kingdom;449215;Exclusive Economic Zone (200 nm) EEZ;;UK;In www.marineregions.org;2; ;22,37871347;37,93818478
+6;Tristan da Cunha;United Kingdom;758168;Exclusive Economic Zone (200 nm) EEZ;;UK;In www.marineregions.org;2; ;34,47297083;78,65437645
+7;Amsterdam and Saint Paul Islands;France;512188;Exclusive Economic Zone (200 nm) EEZ;;FR;In www.marineregions.org;2; ;26,33169318;52,77597934
+8;Crozet Islands;France;575375;Exclusive Economic Zone (200 nm) EEZ;;FR;In www.marineregions.org;2; ;32,53110036;67,22867758
+9;Mayotte;France, Comoros;66738;Exclusive Economic Zone (200 nm) EEZ - Overlapping claim;;FR, KM;In www.marineregions.org;2; ;17,92590071;5,566246847
+10;Ile Tromelin;France, Madagascar, Republic of Mauritius;274555;Exclusive Economic Zone (200 nm) EEZ - Overlapping claim;;FR, MG, MU;In www.marineregions.org;2; ;18,51605975;23,14664398
+11;Kerguélen;France;550817;Exclusive Economic Zone (200 nm) EEZ;;FR;In www.marineregions.org;2; ;66,65381115;67,55983733
+12;New Caledonia;France;1175971;Exclusive Economic Zone (200 nm) EEZ;;FR;In www.marineregions.org;2; ;180,5108068;102,2792054
+13;Réunion;France;315151;Exclusive Economic Zone (200 nm) EEZ;;FR;In www.marineregions.org;2; ;22,2345813;27,55035828
+14;Europa Island;France;127936;Exclusive Economic Zone (200 nm) EEZ;;FR;In www.marineregions.org;2; ;13,75726757;11,31545354
+15;Matthew and Hunter Islands;France, Vanuatu;187184;Exclusive Economic Zone (200 nm) EEZ - Overlapping claim;;FR, VU;In www.marineregions.org;2; ;16,36601858;16,57330835
+16;Juan de Nova Island;France;62775;Exclusive Economic Zone (200 nm) EEZ;;FR;In www.marineregions.org;2; ;10,00336554;5,335712229
+17;Bassas da India;France;120706;Exclusive Economic Zone (200 nm) EEZ;;FR;In www.marineregions.org;2; ;13,24490989;10,47651564
+18;Anguilla;United Kingdom;90164;Exclusive Economic Zone (200 nm) EEZ;;UK;In www.marineregions.org;2; ;12,56137555;7,7844268
+19;Aruba;Netherlands;30015;Exclusive Economic Zone (200 nm) EEZ;;NL;In www.marineregions.org;2; ;8,600131337;2,504936795
+20;Azores;Portugal;960421;Exclusive Economic Zone (200 nm) EEZ;1977-05-28;PT;Act No. 33/77 of 28 May 1977 regarding the juridical status of the Portuguese Territorial Sea and the Exclusive Economic Zone;2;Unilateral;46,81507356;99,22690555
+21;Bonaire;Netherlands;13005;Exclusive Economic Zone (200 nm) EEZ;;NL;In www.marineregions.org;2; ;6,831847698;1,081028369
+22;British Virgin Islands;United Kingdom;81555;Exclusive Economic Zone (200 nm) EEZ;;UK;In www.marineregions.org;2; ;14,67540909;7,059898573
+23;Canary Islands;Spain;445910;Exclusive Economic Zone (200 nm) EEZ;1997-08-01;ES;Royal Decree 1315/1997, of 1 August 1997, establishing a Fisheries Protection Zone in the Mediterranean Sea;2;Unilateral;43,61437217;41,06117647
+24;Cayman Islands;United Kingdom;118291;Exclusive Economic Zone (200 nm) EEZ;;UK;In www.marineregions.org;2; ;14,28577615;10,16646089
+25;Clipperton Island;France;435657;Exclusive Economic Zone (200 nm) EEZ;;FR;In www.marineregions.org;2; ;21,45927555;35,97360034
+26;Curaçao;Netherlands;25401;Exclusive Economic Zone (200 nm) EEZ;;NL;In www.marineregions.org;2; ;10,07187809;2,117826935
+27;Faeroe;Denmark;265632;Exclusive Economic Zone (200 nm) EEZ;;DK;In www.marineregions.org;2; ;44,07095028;46,40717658
+28;Gibraltar;United Kingdom, Spain;388;Exclusive Economic Zone (200 nm) EEZ - Overlapping claim;;UK, ES;In www.marineregions.org;2; ;1,131564057;0,038855051
+29;Guadeloupe;France;90705;Exclusive Economic Zone (200 nm) EEZ;;FR;In www.marineregions.org;2; ;18,30872743;7,701600345
+30;Madeira;Portugal;452796;Exclusive Economic Zone (200 nm) EEZ;1977-05-28;PT;Act No. 33/77 of 28 May 1977 regarding the juridical status of the Portuguese Territorial Sea and the Exclusive Economic Zone;2;Unilateral;28,12440825;43,79284839
+31;Montserrat;United Kingdom;7188;Exclusive Economic Zone (200 nm) EEZ;;UK;In www.marineregions.org;2; ;3,722197313;0,608258065
+32;Saba;Netherlands;9487;Exclusive Economic Zone (200 nm) EEZ;;NL;In www.marineregions.org;2; ;3,872844353;0,806701861
+33;Saint-Barthélemy;France;4179;Exclusive Economic Zone (200 nm) EEZ;;FR;In www.marineregions.org;2; ;3,016277198;0,356392605
+34;Sint-Eustatius;Netherlands;2176;Exclusive Economic Zone (200 nm) EEZ;;NL;In www.marineregions.org;2; ;3,004728211;0,184934691
+35;Collectivity of Saint Martin;France;1100;Exclusive Economic Zone (200 nm) EEZ;;FR;In www.marineregions.org;2; ;2,318990482;0,093811327
+36;Saint-Pierre and Miquelon;France;12414;Exclusive Economic Zone (200 nm) EEZ;;FR;In www.marineregions.org;2; ;11,33066797;1,438409575
+37;Sint-Maarten;Netherlands;466;Exclusive Economic Zone (200 nm) EEZ;;NL;In www.marineregions.org;2; ;1,020382032;0,039740901
+38;Turks and Caicos Islands;United Kingdom;91025;Exclusive Economic Zone (200 nm) EEZ;;UK;In www.marineregions.org;2; ;19,70559247;8,007837469
+39;Portugal;Portugal;315501;Exclusive Economic Zone (200 nm) EEZ;1977-05-28;PT;Act No. 33/77 of 28 May 1977 regarding the juridical status of the Portuguese Territorial Sea and the Exclusive Economic Zone;2;Unilateral;38,71070638;32,51775
+40;Martinique;France;47787;Exclusive Economic Zone (200 nm) EEZ;;FR;In www.marineregions.org;2; ;15,98472731;4,001002056
+41;Ireland;Ireland;427039;Exclusive Economic Zone (200 nm) EEZ;2014-01-01;IE;"Maritime Jurisdiction (Boundaries of
+Exclusive Economic Zone) Order 2014
+";2;Unilateral;119,9043858;56,74438965
+42;Guernsey;United Kingdom;6531;Exclusive Economic Zone (200 nm) EEZ;;UK;In www.marineregions.org;2; ;5,757581372;0,812424813
+43;Jersey;United Kingdom;2277;Exclusive Economic Zone (200 nm) EEZ;;UK;In www.marineregions.org;2; ;3,046639286;0,280488468
+44;French Guiana;France;131554;Exclusive Economic Zone (200 nm) EEZ;;FR;In www.marineregions.org;2; ;22,87733821;10,75971416
+45;Melilla;Spain, Morocco;27;Exclusive Economic Zone (200 nm) EEZ - Overlapping claim;;ES, MA;In www.marineregions.org;2; ;0,272697947;0,002681959
+46;Alhucemas Islands;Spain, Morocco;14;Exclusive Economic Zone (200 nm) EEZ - Overlapping claim;;ES, MA;In www.marineregions.org;2; ;0,192164914;0,001392002
+47;Perejil Island;Spain, Morocco;1;Exclusive Economic Zone (200 nm) EEZ - Overlapping claim;;ES, MA;In www.marineregions.org;2; ;0,055989873;6,40267E-05
+48;Ceuta;Spain, Morocco;33;Exclusive Economic Zone (200 nm) EEZ - Overlapping claim;;ES, MA;In www.marineregions.org;2; ;0,451003282;0,003264993
+49;Peñón de Vélez de la Gomera;Spain, Morocco;4;Exclusive Economic Zone (200 nm) EEZ - Overlapping claim;;ES, MA;In www.marineregions.org;2; ;0,090989291;0,000364686
+50;Chafarinas Islands;Spain, Morocco;26;Exclusive Economic Zone (200 nm) EEZ - Overlapping claim;;ES, MA;In www.marineregions.org;2; ;0,356439613;0,002523853
+51;Cyprus;Cyprus;98450;Exclusive Economic Zone (200 nm) EEZ;2003-03-21;CY;The Exclusive Economic Zone and the Continental Shelf Laws 2004 and 2014 (consolidation of Laws 64(1)/2004, 97(1)/2014),;2;Unilateral;21,03138544;9,663340568
+52;Malta;Malta;52923;Exclusive Economic Zone (200 nm) EEZ;;MT;In www.marineregions.org;2; ;12,32283765;5,244881569
+53;Greece;Greece;482910;Exclusive Economic Zone (200 nm) EEZ;;EL;In www.marineregions.org;2; ;184,6078184;48,60129171
+54;Bulgaria;Bulgaria;34745;Exclusive Economic Zone (200 nm) EEZ;1987-07-08;BG;Act of 8 July 1987 governing the ocean space of the People's Republic of Bulgaria;2;Unilateral;11,43042187;3,83234013
+55;Estonia;Estonia;36451;Exclusive Economic Zone (200 nm) EEZ;1993-03-10;EE;Law on the boundaries of the maritime tract, 10 March 1993;2;Unilateral;47,93576863;5,655113369
+56;Finland;Finland;81553;Exclusive Economic Zone (200 nm) EEZ;2004-12-02;FI;Government Decree on the Exclusive Economic Zone of Finland, 2 December 2004;2;Unilateral;397,6452813;13,79748666
+57;Sweden;Sweden;155347;Exclusive Economic Zone (200 nm) EEZ;1992-12-03;SE;Ordinance on Sweden's Exclusive Economic Zone;2;Unilateral;342,815153;24,71339804
+58;Lithuania;Lithuania;6832;Exclusive Economic Zone (200 nm) EEZ;2004-12-06;LT;Resolution No 1597 on the Approval of the Limits of the Territorial Sea, Contiguous Zone, Exclusive Economic Zone and Continental Shelf of the Republic of Lithuania;2;Unilateral;8,257896263;0,97694023
+59;Belgium;Belgium;3495;Exclusive Economic Zone (200 nm) EEZ;1999-04-22;BE;Act concerning the exclusive economic zone of Belgium in the North Sea, 22 April 1999;2;Unilateral;3,265216101;0,451717673
+60;Netherlands;Netherlands;64328;Exclusive Economic Zone (200 nm) EEZ;1999-05-27;NL;"Kingdom Act of 27 May 1999 establishing an exclusive economic zone of the Kingdom (Exclusive
+Economic Zone (Establishment) Act)";2;Unilateral;50,89628241;8,72901532
+61;Germany;Germany;56763;Exclusive Economic Zone (200 nm) EEZ;1994-11-25;DE;Proclamation of 25 November 1994 by the Federal Republic of Germany concerning the establishment of an exclusive economic zone of the Federal Republic of Germany in the North Sea and in the Baltic Sea;2;Unilateral;75,38204103;7,881596074
+62;Denmark;Denmark;105021;Exclusive Economic Zone (200 nm) EEZ;1996-06-24;DK;Executive Order No. 584 of 24 June 1996 concerning Denmark's Exclusive economic Zone;2;Unilateral;107,4598026;15,15849487
+63;Latvia;Latvia;28353;Exclusive Economic Zone (200 nm) EEZ;1993-02-02;LV;Law on Continental Shelf and Exclusive Economic Zone of the Republic of Latvia;2;Unilateral;18,89151931;4,202034638
+64;Croatia;Croatia;55404;Exclusive Economic Zone (200 nm) EEZ;1994-01-27;HR;The Maritime Code 1994;2;Unilateral;66,00891238;6,160245374
+65;Italy;Italy;536654;Exclusive Economic Zone (200 nm) EEZ;;IT;In www.marineregions.org;2; ;138,6830121;56,36409016
+66;Romania;Romania;29606;Exclusive Economic Zone (200 nm) EEZ;1986-04-25;RO;Decree No. 142 of the Council of State concerning the establishment of the Exclusive Economic Zone of the Socialist Republic of Romania in the Black Sea;2;Unilateral;10,24690171;3,335432362
+67;Poland;Poland;29982;Exclusive Economic Zone (200 nm) EEZ;1991-03-21;PL;"Act concerning the maritime areas of the Polish Republic
+and the marine administration
+";2;Unilateral;30,98738117;4,198038585
+68;Slovenia;Slovenia;214;Exclusive Economic Zone (200 nm) EEZ;;SI;In www.marineregions.org;2; ;1,085192242;0,024705701
+69;Wallis and Futuna;France;262750;Exclusive Economic Zone (200 nm) EEZ;;FR;In www.marineregions.org;2; ;23,74883275;21,88155281
+70;France;France;345240;Exclusive Economic Zone (200 nm) EEZ;1976-07-16;FR;FRA EEZ 200nm;2;Unilateral;130,208294;40,11868667
+71;Greenland;Denmark;2268623;Exclusive Economic Zone (200 nm) EEZ;;DK;In www.marineregions.org;2; ;1804,328606;736,6753516
+72;United Kingdom;United Kingdom;731309;Exclusive Economic Zone (200 nm) EEZ;;UK;In www.marineregions.org;2; ;321,4780454;107,7047119
+73;Spain;Spain;561763;Exclusive Economic Zone (200 nm) EEZ;1997-08-01;ES;Royal Decree 1315/1997, of 1 August 1997, establishing a Fisheries Protection Zone in the Mediterranean Sea;2;Unilateral;110,9734267;60,85478149
+74;South Georgia and the South Sandwich Islands;United Kingdom, Argentina;1237783;Exclusive Economic Zone (200 nm) EEZ - Overlapping claim;;UK, AR;In www.marineregions.org;2; ;79,49664493;180,8614188
+75;Bermuda;United Kingdom;464389;Exclusive Economic Zone (200 nm) EEZ;;UK;In www.marineregions.org;2; ;25,47121328;44,51702195
