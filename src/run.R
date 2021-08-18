@@ -6,7 +6,8 @@
 #############################################################################################
 
 ## remotes::install_github("DTUAqua/DATRAS/DATRAS")
-## remotes::install_github("casperwberg/surveyIndex/surveyIndex")
+## NOTE: "posprob" branch of surveyIndex package needed
+##remotes::install_github("casperwberg/surveyIndex/surveyIndex",ref="posprob")
 
 library(DATRAS)
 library(maps); library(mapdata)
@@ -282,3 +283,115 @@ for(i in 1:length(models)){
     surveyIndex:::plot.SIlist(list(nmodels[[i]],nmodels2[[i]],nmodels3[[i]]),main=names(models)[i])
 }
 dev.off()
+
+## Output summaries
+sink("../output/summaries-numbers.txt")
+cat("============ Models on numbers ===============\n")
+lapply(nmodels,function(x) { summary(x$pModels[[1]])  } )
+cat("=====================\n")
+lapply(nmodels2,function(x) { summary(x$pModels[[1]])  } )
+cat("=====================\n")
+lapply(nmodels3,function(x) { summary(x$pModels[[1]])  } )
+sink()
+
+#############################
+## Probability of encounter
+#############################
+
+pmodels = list()
+pmodels2 = list()
+pmodels3 = list()
+
+## We want probability pr haul
+StdEffort = TVS2TVL()[2]
+
+for(lt in litterTypesExt){
+
+    cat("Doing ",lt,"...\n")
+    
+    drd$Nage = matrix(d[,lt], nrow=nrow(d),ncol=1)
+    colnames(drd$Nage)<-1
+    
+    system.time( pmodels[[ lt ]]  <- getSurveyIdx(drd,ages,predD=bgrid,cutOff=0,fam="negbin",mc.cores=1,modelP=fm,nBoot=1000, predfix=list(EFFORT=StdEffort),control=list(trace=TRUE), doProbs=TRUE ) )
+
+    system.time( pmodels2[[ lt ]]  <- getSurveyIdx(drd,ages,predD=bgrid,cutOff=0,fam="negbin",mc.cores=1,modelP=fm2,nBoot=1000, predfix=list(EFFORT=StdEffort),control=list(trace=TRUE,maxit=20), doProbs=TRUE ) )
+
+    system.time( pmodels3[[ lt ]]  <- getSurveyIdx(drd,ages,predD=bgrid,cutOff=0,fam="negbin",mc.cores=1,modelP=fm3,nBoot=1000, predfix=list(EFFORT=StdEffort),control=list(trace=TRUE,maxit=20), doProbs=TRUE ) )
+
+    
+}
+
+
+png("../output/allmodels-posprob.png",width=1200,height=800)   
+par(mfrow=c(2,4))
+for(i in 1:length(pmodels)){
+    surveyIndex:::plot.SIlist(list(pmodels[[i]],pmodels2[[i]],pmodels3[[i]]),main=names(pmodels)[i],posProb=TRUE)
+}
+dev.off()
+
+## Fitted maps
+
+lastyear = tail(levels(d$Year),1)
+
+probcols = rev(hcl.colors(7,palette="Reds 3")) ## colorRampPalette(c("white","lightred","red","darkred"))
+
+for(lt in litterTypesExt){
+    png(paste0("../output/",lt,"-posprob.png"),width=1200,height=800)
+
+    surveyIdxPlots(pmodels[[lt]],drd,myids=NULL,predD=bgrid,select="absolutemap",colors=probcols,legend=TRUE,legend.signif=2,map.cex=1.3,par=list(mfrow=c(1,1),oma=c(0,0,1,0)),year=lastyear,posProb=TRUE,scaleMap=FALSE)
+    title(lt,outer=TRUE)
+    dev.off()
+    
+}
+
+##########################
+## CSV output
+##########################
+
+allout = list()
+
+for(lt in litterTypesExt){
+    allout[[lt]] = data.frame(Type=lt, Year = rownames(models[[lt]]$idx), DensityMass=models[[lt]]$idx[,1], DensityMassLow = models[[lt]]$lo[,1], DensityMassHigh=models[[lt]]$up[,1],
+                              DensityNumbers=nmodels[[lt]]$idx[,1], DensityNumbersLow = nmodels[[lt]]$lo[,1], DensityNumbersHigh=nmodels[[lt]]$up[,1],
+                              DensityProb=pmodels[[lt]]$idx0[,1],    DensityProbLow = pmodels[[lt]]$lo0[,1], DensityProbHigh=pmodels[[lt]]$up0[,1])
+                              
+}
+
+allout.df = do.call(rbind,allout)
+
+write.csv2(allout.df,file="../output/litterEstimates.csv",row.names=FALSE)
+
+
+############################################################
+## Trend models using only data from 2015 and onwards
+############################################################
+
+drd2 = subset(drd,!Year %in% as.character(2011:2014))
+d2 = subset(d, !Year %in% as.character(2011:2014))
+
+StdEffort = 1e6 / nrow(bgrid)  ## Numbers/Mass pr km^2
+
+trend15models = list()
+trend15modelsn = list()
+
+for(lt in litterTypesExt){
+
+    cat("Doing ",lt,"...\n")
+    
+    drd2$Nage = matrix(d2[,lt], nrow=nrow(d2),ncol=1)
+    colnames(drd2$Nage)<-1
+
+    system.time( trend15modelsn[[ lt ]]  <- getSurveyIdx(drd2,ages,predD=bgrid,cutOff=0,fam="negbin",mc.cores=1,modelP=fm3,nBoot=1000, predfix=list(EFFORT=StdEffort),control=list(trace=TRUE,maxit=20) ) )
+
+    system.time( trend15models[[ lt ]]  <- getSurveyIdx(drd2,ages,predD=bgrid,cutOff=0,fam="Tweedie",mc.cores=1,modelP=fm3,nBoot=1000, predfix=list(EFFORT=StdEffort),control=list(trace=TRUE,maxit=20) ) )
+   
+}
+
+## Output summaries
+sink("../output/trend15summaries.txt")
+cat("============ Trend models (2015 onwards)  ===============\n")
+cat("============ Mass  ===============\n")
+lapply(trend15models,function(x) { summary(x$pModels[[1]])  } )
+cat("============ Numbers  ===============\n")
+lapply(trend15modelsn,function(x) { summary(x$pModels[[1]])  } )
+sink()
