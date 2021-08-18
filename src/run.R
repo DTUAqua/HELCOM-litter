@@ -284,6 +284,17 @@ for(i in 1:length(models)){
 }
 dev.off()
 
+## Maps
+for(lt in litterTypesExt){
+    png(paste0("../output/",lt,"-numbers.png"),width=1200,height=800)
+
+        surveyIdxPlots(nmodels[[lt]],drd,myids=NULL,predD=bgrid,select="map",colors=rev(heat.colors(7)),legend=TRUE,legend.signif=2,map.cex=1.3,par=list(mfrow=c(1,1)),main=lt)
+
+    dev.off()
+}
+
+
+
 ## Output summaries
 sink("../output/summaries-numbers.txt")
 cat("============ Models on numbers ===============\n")
