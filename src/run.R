@@ -194,11 +194,11 @@ dev.off()
 ## Export model summaries
 
 sink("../output/summaries.txt")
-lapply(models,function(x) { summary(x$pModels[[1]])  } )
+lapply(models,function(x) { print(summary(x$pModels[[1]]))  } )
 cat("=====================\n")
-lapply(models2,function(x) { summary(x$pModels[[1]])  } )
+lapply(models2,function(x) { print(summary(x$pModels[[1]]))  } )
 cat("=====================\n")
-lapply(models3,function(x) { summary(x$pModels[[1]])  } )
+lapply(models3,function(x) { print(summary(x$pModels[[1]]))  } )
 sink()
 
 
@@ -298,11 +298,11 @@ for(lt in litterTypesExt){
 ## Output summaries
 sink("../output/summaries-numbers.txt")
 cat("============ Models on numbers ===============\n")
-lapply(nmodels,function(x) { summary(x$pModels[[1]])  } )
+lapply(nmodels,function(x) { print(summary(x$pModels[[1]]))  } )
 cat("=====================\n")
-lapply(nmodels2,function(x) { summary(x$pModels[[1]])  } )
+lapply(nmodels2,function(x) { print(summary(x$pModels[[1]]))  } )
 cat("=====================\n")
-lapply(nmodels3,function(x) { summary(x$pModels[[1]])  } )
+lapply(nmodels3,function(x) { print(summary(x$pModels[[1]]))  } )
 sink()
 
 #############################
@@ -402,7 +402,7 @@ for(lt in litterTypesExt){
 sink("../output/trend15summaries.txt")
 cat("============ Trend models (2015 onwards)  ===============\n")
 cat("============ Mass  ===============\n")
-lapply(trend15models,function(x) { summary(x$pModels[[1]])  } )
+lapply(trend15models,function(x) { print(summary(x$pModels[[1]]))  } )
 cat("============ Numbers  ===============\n")
-lapply(trend15modelsn,function(x) { summary(x$pModels[[1]])  } )
+lapply(trend15modelsn,function(x) { print(summary(x$pModels[[1]]))  } )
 sink()
