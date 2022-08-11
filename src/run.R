@@ -7,7 +7,7 @@
 
 ## remotes::install_github("DTUAqua/DATRAS/DATRAS")
 ## NOTE: "posprob" branch of surveyIndex package needed
-##remotes::install_github("casperwberg/surveyIndex/surveyIndex",ref="posprob")
+remotes::install_github("casperwberg/surveyIndex/surveyIndex",ref="posprob")
 
 library(DATRAS)
 library(maps); library(mapdata)
@@ -370,7 +370,7 @@ for(lt in litterTypesExt){
 
 allout.df = do.call(rbind,allout)
 
-write.csv2(allout.df,file="../output/litterEstimates.csv",row.names=FALSE)
+write.csv(allout.df,file="../output/litterEstimates.csv",row.names=FALSE)
 
 
 ############################################################
