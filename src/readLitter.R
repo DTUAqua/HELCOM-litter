@@ -63,27 +63,35 @@ readlitter <- function (file = "IBTS.csv", na.strings = c("-9", "-9.0", "-9.00",
     }
 
     
-     ## Don't use RECO-LT (only total weight)
-    badhauls = unique(d$LT$haul.id[ d$LT$LTREF=="RECO-LT" ] )
-    cat("Dropping ", length(badhauls), " hauls of type RECO-LT\n")
-    d[[2]] = subset(d[[2]], !haul.id %in% badhauls)
-    d[[1]] = subset(d[[1]], !haul.id %in% badhauls)
-
-    if(type=="Numbers"){
-        badhauls = unique(d$LT$haul.id[ is.na(d$LT$LT_Items) ] )
-        cat("Dropping ", length(badhauls), " hauls with only weight info\n")
+    ## Zero litter hauls are recorded as RECO-LT and PARAM = LT-TOT...don't exclude!
+    badhauls = unique(d$LT$haul.id[ d$LT$LTREF=="RECO-LT" & d$LT$PARAM!="LT-TOT" ] )
+    if(length(badhauls)>0){
+        cat("Dropping ", length(badhauls), " hauls of type RECO-LT with PARAM!=LT-TOT\n")
         d[[2]] = subset(d[[2]], !haul.id %in% badhauls)
         d[[1]] = subset(d[[1]], !haul.id %in% badhauls)
     }
-
+    
+        
+    if(type=="Numbers"){
+        badhauls = unique(d$LT$haul.id[ is.na(d$LT$LT_Items) ] )
+        if(length(badhauls)>0){ 
+            cat("Dropping ", length(badhauls), " hauls with only weight info\n")
+            d[[2]] = subset(d[[2]], !haul.id %in% badhauls)
+            d[[1]] = subset(d[[1]], !haul.id %in% badhauls)
+        }
+    }
+    ## zero hauls: weight unit does not matter
+    zerohauls = d$LT$LT_Items==0 | d$LT$LT_Weight==0
+    d$LT$UnitWgt[ zerohauls ] = "kg/haul"
+        
     if(type=="Weight"){
-        badhauls = unique(d$LT$haul.id[ is.na(d$LT$UnitWgt) ] )
-        cat("Dropping ", length(badhauls), " hauls with no weight unit info\n")
-        d[[2]] = subset(d[[2]], !haul.id %in% badhauls)
-        d[[1]] = subset(d[[1]], !haul.id %in% badhauls)
-
-        d$LT$LT_Weight[ d$LT$UnitWgt=="g/haul" ] = d$LT$LT_Weight[ d$LT$UnitWgt=="g/haul" ] / 1000
-
+        badhauls = unique(d$LT$haul.id[ is.na(d$LT$UnitWgt) | !d$LT$UnitWgt%in%c("g/haul","kg/haul")])
+        if(length(badhauls)>0){ 
+            cat("Dropping ", length(badhauls), " hauls with no or bad weight unit info\n")
+            d[[2]] = subset(d[[2]], !haul.id %in% badhauls)
+            d[[1]] = subset(d[[1]], !haul.id %in% badhauls)
+            d$LT$LT_Weight[ d$LT$UnitWgt=="g/haul" ] = d$LT$LT_Weight[ d$LT$UnitWgt=="g/haul" ] / 1000
+        }
     }
     
     if(nlevels(d[[1]]$haul.id) != nlevels(d[[2]]$haul.id)){
@@ -102,14 +110,12 @@ readlitter <- function (file = "IBTS.csv", na.strings = c("-9", "-9.0", "-9.00",
 
     Code2Type <- structure(as.character(conv$Type), names=conv$C.TS)
     Code2TypeRev <- structure(as.character(conv$Type), names=conv$C.TS.REV)
-
     d[[2]] = transform(d[[2]],Type= factor(
                       ifelse(as.character(LTREF)=="C-TS",
                              as.character( lookup(PARAM,Code2Type) ),
                              as.character( lookup(PARAM,Code2TypeRev) )
                       )))
                       
-
     if(type=="Weight"){
         agg = xtabs(LT_Weight ~ haul.id + Type,d[[2]])[ d[[1]]$haul.id, ]
         
