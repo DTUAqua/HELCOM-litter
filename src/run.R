@@ -322,6 +322,48 @@ cat("=====================\n")
 lapply(nmodels3,function(x) { print(summary(x$pModels[[1]]))  } )
 sink()
 
+##########################################
+## Calculate indices by EEZ (numbers)
+##########################################
+EEZmodelsn=list()
+
+for(lt in litterTypesExt){
+    cat("Doing ",lt,"...\n")
+        
+    EEZmodelsn[[lt]] = lapply(levels(bgrid$Territory),function(x){
+        cat(x,"\n")
+        pd = subset(bgrid,Territory==x)
+        redoSurveyIndex(drd,nmodels[[lt]],predD=pd,myids=NULL,predfix=list(EFFORT=1e6/nrow(pd)))
+        })
+}
+
+## Arrange indices and uncertainties in matrix form
+EEZmat = matrix(NA,nlevels(bgrid$Territory),length(litterTypesExt))
+rownames(EEZmat)<-levels(bgrid$Territory)
+colnames(EEZmat)<-litterTypesExt
+EEZmatCV <- EEZmat
+
+for(lt in litterTypesExt){
+    for(ter in 1:nrow(EEZmat)){
+        i = which(litterTypesExt == lt)
+        EEZmat[ter,i] = tail(EEZmodelsn[[lt]][[ter]]$idx[,1],1)
+        logSD = (tail(log(EEZmodelsn[[lt]][[ter]]$up[,1]),1) - tail(log(EEZmodelsn[[lt]][[ter]]$lo[,1]),1))/4 
+        EEZmatCV[ter,i] = logSD
+    }
+}
+
+col <- colorRampPalette(rev(c("red", "white", "blue")))
+png("../output/EEZplotn%03d.png",width=1200,height=800)
+
+par(mfrow=c(1,1),mar=c(5,5,4,4))
+plot(EEZmat,col=col,fmt.cell="%.2f",fmt.key="%.2f",las=1,xlab="",ylab="",main=paste("Litter density (numbers / km^2) by EEZ",tail(levels(d$Year),1)))
+
+col <- colorRampPalette(c("white","yellow","red"))
+plot(EEZmatCV,col=col,fmt.cell="%.2f",fmt.key="%.2f",las=1,xlab="",ylab="",main=paste("Litter density uncertainty (CV) by EEZ (numbers)",tail(levels(d$Year),1)))
+dev.off()
+
+
+
 #############################
 ## Probability of encounter
 #############################
