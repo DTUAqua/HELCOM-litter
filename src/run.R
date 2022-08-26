@@ -14,6 +14,7 @@ library(maps); library(mapdata)
 library(surveyIndex)
 library(marmap)
 library(plot.matrix)
+library(xtable)
 
 source("readLitter.R")
 
@@ -21,19 +22,27 @@ litterTypes = c("Glass","Metal","Natural","Other","Plastic","Rubber")
 
 litterTypesExt = c(litterTypes,"SUP","Fishing.related")
 
-datafile = "../data/Litter Exchange Data_2021-06-08 12_39_40.csv"
+datafile = "../data/Litter Exchange Data_2022-08-26 12_41_43.zip"
 
 d = readlitter(datafile,type="Weight")
 
 d = subset(d,HaulDur>0 & HaulVal!="I")
+d = subset(d,!is.na(d$lon) & !is.na(d$lat))
 
 
 xtabs(~Year,d)
 xtabs(~Year+Quarter,d)
-## Only few data points in 2011 -- drop
-
-d = subset(d, Year != "2011")
 d$Year = factor(d$Year)
+
+## Make tables with data overview
+makeTable<-function(x,fil,cap) cat(print(xtable( x, caption=cap, digits=0)),file=fil)
+
+makeTable( xtabs(~Year+Quarter,d), fil="../report/yqtab.tex",cap="Weight: Number of hauls by year and quarter")
+makeTable( xtabs(~Year+Country,d), fil="../report/yctab.tex",cap="Weight: Number of hauls by year and country")
+makeTable( xtabs(~Gear+Country,d), fil="../report/gctab.tex",cap="Weight: Number of hauls by gear and country")
+makeTable( xtabs(~Country+Quarter,d), fil="../report/cqtab.tex",cap="Weight: Number of hauls by country and quarter")
+
+
 
 ## data frame to DATRASraw object
 df2dr<-function(x){
@@ -248,10 +257,18 @@ dev.off()
 #####################################
 
 d = readlitter(datafile,type="Numbers")
+## Note, different number of hauls when considering numbers!
 d = subset(d,HaulDur>0 & HaulVal!="I")
-d = subset(d, Year != "2011")
+d = subset(d,!is.na(d$lon) & !is.na(d$lat))
 d$Year = factor(d$Year)
 drd = df2dr(d)
+
+
+makeTable( xtabs(~Year+Quarter,d), fil="../report/yqtab-n.tex",cap="Numbers: Number of hauls by year and quarter")
+makeTable( xtabs(~Year+Country,d), fil="../report/yctab-n.tex",cap="Numbers: Number of hauls by year and country")
+makeTable( xtabs(~Gear+Country,d), fil="../report/gctab-n.tex",cap="Numbers: Number of hauls by gear and country")
+makeTable( xtabs(~Country+Quarter,d), fil="../report/cqtab-n.tex",cap="Numbers: Number of hauls by country and quarter")
+
 
 
 StdEffort = 1e6 / nrow(bgrid)  ## Numbers pr km^2
@@ -344,7 +361,7 @@ dev.off()
 
 lastyear = tail(levels(d$Year),1)
 
-probcols = rev(hcl.colors(7,palette="Reds 3")) ## colorRampPalette(c("white","lightred","red","darkred"))
+probcols = rev(hcl.colors(7,palette="Reds 3")) 
 
 for(lt in litterTypesExt){
     png(paste0("../output/",lt,"-posprob.png"),width=1200,height=800)

@@ -10,6 +10,13 @@ TVS2TVL <- function(){
 }
 
 readlitter <- function (file = "IBTS.csv", na.strings = c("-9", "-9.0", "-9.00", "-9.0000"), type="Weight"){
+
+    getExt<-function(x) { l=nchar(x); substr(x,l-3,l) }
+    if(getExt(file)==".zip"){
+        tempdir <- tempdir()
+        file <- unzip(file, exdir = tempdir)[1]
+    }
+    
     ## Locating lines with headers
     lines <- readLines(file)
     i <- grep("RecordType", lines)
@@ -81,6 +88,10 @@ readlitter <- function (file = "IBTS.csv", na.strings = c("-9", "-9.0", "-9.00",
         }
     }
     ## zero hauls: weight unit does not matter
+    cat("Weight units:\n")
+    print(levels(d$LT$UnitWgt))
+    d$LT$UnitWgt <- factor(d$LT$UnitWgt,levels=c("g/haul","kg/haul"))
+    
     zerohauls = d$LT$LT_Items==0 | d$LT$LT_Weight==0
     d$LT$UnitWgt[ zerohauls ] = "kg/haul"
         
@@ -114,7 +125,9 @@ readlitter <- function (file = "IBTS.csv", na.strings = c("-9", "-9.0", "-9.00",
                       ifelse(as.character(LTREF)=="C-TS",
                              as.character( lookup(PARAM,Code2Type) ),
                              as.character( lookup(PARAM,Code2TypeRev) )
-                      )))
+                             )))
+
+    d[[2]]$Type <- factor(d[[2]]$Type,levels=c("Glass","Metal","Natural","Other","Plastic","Rubber"))
                       
     if(type=="Weight"){
         agg = xtabs(LT_Weight ~ haul.id + Type,d[[2]])[ d[[1]]$haul.id, ]
