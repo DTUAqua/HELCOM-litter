@@ -1,3 +1,4 @@
+$Glass
 
 Family: Tweedie(p=1.412) 
 Link function: log 
@@ -22,6 +23,8 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 R-sq.(adj) =  0.0823   Deviance explained = 26.6%
 -ML = 1069.2  Scale est. = 2.4522    n = 4819
 
+$Metal
+
 Family: Tweedie(p=1.741) 
 Link function: log 
 
@@ -44,6 +47,8 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 
 R-sq.(adj) =  0.0183   Deviance explained = 30.9%
 -ML = 1138.6  Scale est. = 13.175    n = 4819
+
+$Natural
 
 Family: Tweedie(p=1.701) 
 Link function: log 
@@ -68,6 +73,8 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 R-sq.(adj) =  0.0069   Deviance explained =   37%
 -ML =   2177  Scale est. = 8.6734    n = 4819
 
+$Other
+
 Family: Tweedie(p=1.688) 
 Link function: log 
 
@@ -90,6 +97,8 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 
 R-sq.(adj) =  0.00785   Deviance explained = 17.3%
 -ML = 1326.1  Scale est. = 10.522    n = 4819
+
+$Plastic
 
 Family: Tweedie(p=1.761) 
 Link function: log 
@@ -114,6 +123,8 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 R-sq.(adj) =  -0.000709   Deviance explained = 30.5%
 -ML = 1355.7  Scale est. = 4.8775    n = 4819
 
+$Rubber
+
 Family: Tweedie(p=1.73) 
 Link function: log 
 
@@ -136,6 +147,8 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 
 R-sq.(adj) =  0.00508   Deviance explained =   20%
 -ML = 719.76  Scale est. = 21.902    n = 4819
+
+$SUP
 
 Family: Tweedie(p=1.69) 
 Link function: log 
@@ -160,6 +173,8 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 R-sq.(adj) =  0.00776   Deviance explained =   31%
 -ML = 855.23  Scale est. = 3.2685    n = 4819
 
+$Fishing.related
+
 Family: Tweedie(p=1.782) 
 Link function: log 
 
@@ -182,7 +197,9 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 
 R-sq.(adj) =  0.00347   Deviance explained = 45.9%
 -ML = 696.09  Scale est. = 16.507    n = 4819
+
 =====================
+$Glass
 
 Family: Tweedie(p=1.411) 
 Link function: log 
@@ -216,6 +233,8 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 R-sq.(adj) =  0.0832   Deviance explained = 27.3%
 -ML = 1065.2  Scale est. = 2.4245    n = 4819
 
+$Metal
+
 Family: Tweedie(p=1.736) 
 Link function: log 
 
@@ -247,6 +266,8 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 
 R-sq.(adj) =  0.0445   Deviance explained = 32.4%
 -ML = 1124.1  Scale est. = 12.535    n = 4819
+
+$Natural
 
 Family: Tweedie(p=1.698) 
 Link function: log 
@@ -280,6 +301,8 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 R-sq.(adj) =  0.0107   Deviance explained = 37.2%
 -ML = 2163.9  Scale est. = 8.5463    n = 4819
 
+$Other
+
 Family: Tweedie(p=1.685) 
 Link function: log 
 
@@ -311,6 +334,8 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 
 R-sq.(adj) =  0.00825   Deviance explained = 18.3%
 -ML = 1318.1  Scale est. = 10.228    n = 4819
+
+$Plastic
 
 Family: Tweedie(p=1.76) 
 Link function: log 
@@ -344,6 +369,8 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 R-sq.(adj) =  0.00108   Deviance explained = 30.8%
 -ML = 1340.6  Scale est. = 4.8233    n = 4819
 
+$Rubber
+
 Family: Tweedie(p=1.734) 
 Link function: log 
 
@@ -375,6 +402,8 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 
 R-sq.(adj) =  0.00466   Deviance explained = 17.8%
 -ML =  708.3  Scale est. = 22.641    n = 4819
+
+$SUP
 
 Family: Tweedie(p=1.688) 
 Link function: log 
@@ -408,6 +437,8 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 R-sq.(adj) =  0.0171   Deviance explained = 30.8%
 -ML = 830.73  Scale est. = 3.2263    n = 4819
 
+$Fishing.related
+
 Family: Tweedie(p=1.784) 
 Link function: log 
 
@@ -439,7 +470,9 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 
 R-sq.(adj) =  0.00308   Deviance explained = 46.4%
 -ML = 680.48  Scale est. = 16.402    n = 4819
+
 =====================
+$Glass
 
 Family: Tweedie(p=1.412) 
 Link function: log 
@@ -461,6 +494,8 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 
 R-sq.(adj) =  0.0814   Deviance explained = 26.7%
 -ML = 1069.1  Scale est. = 2.4522    n = 4819
+
+$Metal
 
 Family: Tweedie(p=1.741) 
 Link function: log 
@@ -485,6 +520,8 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 R-sq.(adj) =  0.0182   Deviance explained = 30.4%
 -ML = 1135.8  Scale est. = 13.255    n = 4819
 
+$Natural
+
 Family: Tweedie(p=1.705) 
 Link function: log 
 
@@ -507,6 +544,8 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 
 R-sq.(adj) =  0.0147   Deviance explained = 34.5%
 -ML = 2190.4  Scale est. = 9.0863    n = 4819
+
+$Other
 
 Family: Tweedie(p=1.688) 
 Link function: log 
@@ -531,6 +570,8 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 R-sq.(adj) =  0.00869   Deviance explained = 17.1%
 -ML = 1325.3  Scale est. = 10.528    n = 4819
 
+$Plastic
+
 Family: Tweedie(p=1.764) 
 Link function: log 
 
@@ -553,6 +594,8 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 
 R-sq.(adj) =  -0.00306   Deviance explained = 29.4%
 -ML = 1364.8  Scale est. = 4.9872    n = 4819
+
+$Rubber
 
 Family: Tweedie(p=1.735) 
 Link function: log 
@@ -577,6 +620,8 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 R-sq.(adj) =  0.000239   Deviance explained = 17.1%
 -ML = 720.59  Scale est. = 23.314    n = 4819
 
+$SUP
+
 Family: Tweedie(p=1.691) 
 Link function: log 
 
@@ -600,6 +645,8 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 R-sq.(adj) =  -0.00834   Deviance explained = 27.8%
 -ML = 875.71  Scale est. = 3.4013    n = 4819
 
+$Fishing.related
+
 Family: Tweedie(p=1.786) 
 Link function: log 
 
@@ -622,3 +669,4 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 
 R-sq.(adj) =  -0.00136   Deviance explained = 44.6%
 -ML =  696.7  Scale est. = 17.154    n = 4819
+
