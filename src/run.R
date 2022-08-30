@@ -203,11 +203,11 @@ dev.off()
 ## Export model summaries
 
 sink("../output/summaries.txt")
-lapply(models,function(x) { print(summary(x$pModels[[1]]))  } )
+lapply(models,function(x) { summary(x$pModels[[1]])  } )
 cat("=====================\n")
-lapply(models2,function(x) { print(summary(x$pModels[[1]]))  } )
+lapply(models2,function(x) { summary(x$pModels[[1]])  } )
 cat("=====================\n")
-lapply(models3,function(x) { print(summary(x$pModels[[1]]))  } )
+lapply(models3,function(x) { summary(x$pModels[[1]])  } )
 sink()
 
 
@@ -315,11 +315,11 @@ for(lt in litterTypesExt){
 ## Output summaries
 sink("../output/summaries-numbers.txt")
 cat("============ Models on numbers ===============\n")
-lapply(nmodels,function(x) { print(summary(x$pModels[[1]]))  } )
+lapply(nmodels,function(x) { summary(x$pModels[[1]])  } )
 cat("=====================\n")
-lapply(nmodels2,function(x) { print(summary(x$pModels[[1]]))  } )
+lapply(nmodels2,function(x) { summary(x$pModels[[1]])  } )
 cat("=====================\n")
-lapply(nmodels3,function(x) { print(summary(x$pModels[[1]]))  } )
+lapply(nmodels3,function(x) { summary(x$pModels[[1]])  } )
 sink()
 
 ##########################################
@@ -419,13 +419,15 @@ for(lt in litterTypesExt){
 ##########################
 
 allout = list()
-
+## drop first year (2011) weight estimate in CSV output, because it is only available for weight
 for(lt in litterTypesExt){
-    allout[[lt]] = data.frame(Type=lt, Year = rownames(models[[lt]]$idx), DensityMass=models[[lt]]$idx[,1], DensityMassLow = models[[lt]]$lo[,1], DensityMassHigh=models[[lt]]$up[,1],
+    allout[[lt]] = data.frame(Type=lt, Year = rownames(nmodels[[lt]]$idx), DensityMass=models[[lt]]$idx[-1,1], DensityMassLow = models[[lt]]$lo[-1,1], DensityMassHigh=models[[lt]]$up[-1,1],
                               DensityNumbers=nmodels[[lt]]$idx[,1], DensityNumbersLow = nmodels[[lt]]$lo[,1], DensityNumbersHigh=nmodels[[lt]]$up[,1],
                               DensityProb=pmodels[[lt]]$idx0[,1],    DensityProbLow = pmodels[[lt]]$lo0[,1], DensityProbHigh=pmodels[[lt]]$up0[,1])
                               
 }
+
+
 
 allout.df = do.call(rbind,allout)
 
@@ -461,7 +463,7 @@ for(lt in litterTypesExt){
 sink("../output/trend15summaries.txt")
 cat("============ Trend models (2015 onwards)  ===============\n")
 cat("============ Mass  ===============\n")
-lapply(trend15models,function(x) { print(summary(x$pModels[[1]]))  } )
+lapply(trend15models,function(x) { summary(x$pModels[[1]])  } )
 cat("============ Numbers  ===============\n")
-lapply(trend15modelsn,function(x) { print(summary(x$pModels[[1]]))  } )
+lapply(trend15modelsn,function(x) { summary(x$pModels[[1]])  } )
 sink()
