@@ -134,7 +134,7 @@ for(lt in litterTypesExt){
 }
 
 
-png("../output/allmodels.png",width=1200,height=800)   
+png("../output/allmodels.png",width=1200,height=800,pointsize=24)   
 par(mfrow=c(2,4))
 for(i in 1:length(models)){
     surveyIndex:::plot.SIlist(list(models[[i]],models2[[i]],models3[[i]]),main=names(models)[i])
@@ -183,7 +183,7 @@ for(lt in litterTypesExt){
 
 
 ## Plot them all
-png("../output/allidx.png",width=1200,height=800)
+png("../output/allidx.png",width=1200,height=800,pointsize=24)
 
 allidxs = lapply(models[-3],function(x)x$idx)
 maxY = max(sapply( allidxs,max))
@@ -294,7 +294,7 @@ for(lt in litterTypesExt){
 }
 
 
-png("../output/allmodels-numbers.png",width=1200,height=800)   
+png("../output/allmodels-numbers.png",width=1200,height=800,pointsize=24)   
 par(mfrow=c(2,4))
 for(i in 1:length(models)){
     surveyIndex:::plot.SIlist(list(nmodels[[i]],nmodels2[[i]],nmodels3[[i]]),main=names(models)[i])
@@ -392,7 +392,7 @@ for(lt in litterTypesExt){
 }
 
 
-png("../output/allmodels-posprob.png",width=1200,height=800)   
+png("../output/allmodels-posprob.png",width=1200,height=800,pointsize=24)   
 par(mfrow=c(2,4))
 for(i in 1:length(pmodels)){
     surveyIndex:::plot.SIlist(list(pmodels[[i]],pmodels2[[i]],pmodels3[[i]]),main=names(pmodels)[i],posProb=TRUE)
