@@ -100,9 +100,9 @@ readlitter <- function (file = "IBTS.csv", na.strings = c("-9", "-9.0", "-9.00",
         if(length(badhauls)>0){ 
             cat("Dropping ", length(badhauls), " hauls with no or bad weight unit info\n")
             d[[2]] = subset(d[[2]], !haul.id %in% badhauls)
-            d[[1]] = subset(d[[1]], !haul.id %in% badhauls)
-            d$LT$LT_Weight[ d$LT$UnitWgt=="g/haul" ] = d$LT$LT_Weight[ d$LT$UnitWgt=="g/haul" ] / 1000
+            d[[1]] = subset(d[[1]], !haul.id %in% badhauls)   
         }
+        d$LT$LT_Weight[ d$LT$UnitWgt=="g/haul" ] = d$LT$LT_Weight[ d$LT$UnitWgt=="g/haul" ] / 1000
     }
     
     if(nlevels(d[[1]]$haul.id) != nlevels(d[[2]]$haul.id)){
